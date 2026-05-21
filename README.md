@@ -330,7 +330,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- Built with [v0](https://v0.app) by Vercel
 - UI components from [shadcn/ui](https://ui.shadcn.com)
 - Animations by [Framer Motion](https://www.framer.com/motion)
 - Icons by [Lucide React](https://lucide.dev)
