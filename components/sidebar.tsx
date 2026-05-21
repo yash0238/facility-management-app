@@ -11,6 +11,7 @@ import {
   Settings,
   LogOut,
   Home,
+  Zap,
 } from 'lucide-react';
 
 interface NavItem {
@@ -26,6 +27,12 @@ const NAV_ITEMS: NavItem[] = [
     label: 'Dashboard',
     icon: <Home className="w-4 h-4" />,
     roles: ['nurse', 'doctor', 'admin', 'super-admin'],
+  },
+  {
+    href: '/operations-center',
+    label: 'Operations Center',
+    icon: <Zap className="w-4 h-4" />,
+    roles: ['admin', 'super-admin'],
   },
   {
     href: '/patients',
