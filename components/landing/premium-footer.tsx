@@ -6,21 +6,21 @@ import { Github, Linkedin, Twitter } from 'lucide-react';
 
 export function PremiumFooter() {
   return (
-    <footer className="border-t border-white/10 py-12 px-6 mt-20">
+    <footer className="border-t border-white/10 py-12 px-4 sm:px-6 mt-16 sm:mt-20">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 mb-12">
           {/* Brand */}
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <div className="text-2xl font-bold gradient-text mb-4">QuarantineOps AI</div>
-            <p className="text-muted-foreground text-sm">
+            <div className="text-xl sm:text-2xl font-bold gradient-text mb-4">QuarantineOps AI</div>
+            <p className="text-slate-400 text-sm">
               AI-powered healthcare operations platform for outbreak response and facility management.
             </p>
           </motion.div>
 
           {/* Product */}
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
-            <h4 className="font-semibold mb-4">Product</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
+            <h4 className="font-semibold mb-4 text-white">Product</h4>
+            <ul className="space-y-2 text-sm text-slate-400">
               <li>
                 <Link href="#features" className="hover:text-foreground transition">
                   Features
@@ -46,25 +46,25 @@ export function PremiumFooter() {
 
           {/* Company */}
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
-            <h4 className="font-semibold mb-4">Company</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
+            <h4 className="font-semibold mb-4 text-white">Company</h4>
+            <ul className="space-y-2 text-sm text-slate-400">
               <li>
-                <Link href="/about" className="hover:text-foreground transition">
+                <Link href="/about" className="hover:text-slate-200 transition">
                   About
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="hover:text-foreground transition">
+                <Link href="/blog" className="hover:text-slate-200 transition">
                   Blog
                 </Link>
               </li>
               <li>
-                <Link href="/careers" className="hover:text-foreground transition">
+                <Link href="/careers" className="hover:text-slate-200 transition">
                   Careers
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-foreground transition">
+                <Link href="/contact" className="hover:text-slate-200 transition">
                   Contact
                 </Link>
               </li>
@@ -73,20 +73,20 @@ export function PremiumFooter() {
 
           {/* Legal */}
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }}>
-            <h4 className="font-semibold mb-4">Legal</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
+            <h4 className="font-semibold mb-4 text-white">Legal</h4>
+            <ul className="space-y-2 text-sm text-slate-400">
               <li>
-                <Link href="/privacy" className="hover:text-foreground transition">
+                <Link href="/privacy" className="hover:text-slate-200 transition">
                   Privacy
                 </Link>
               </li>
               <li>
-                <Link href="/terms" className="hover:text-foreground transition">
+                <Link href="/terms" className="hover:text-slate-200 transition">
                   Terms
                 </Link>
               </li>
               <li>
-                <Link href="/security" className="hover:text-foreground transition">
+                <Link href="/security" className="hover:text-slate-200 transition">
                   Security
                 </Link>
               </li>
@@ -96,15 +96,15 @@ export function PremiumFooter() {
 
         {/* Bottom */}
         <div className="border-t border-white/10 pt-8 flex justify-between items-center flex-wrap gap-4">
-          <p className="text-sm text-muted-foreground">© 2024 QuarantineOps AI. All rights reserved.</p>
+          <p className="text-sm text-slate-400">© 2024 QuarantineOps AI. All rights reserved.</p>
           <div className="flex gap-4">
-            <a href="#" className="text-muted-foreground hover:text-foreground transition">
+            <a href="#" className="text-slate-400 hover:text-slate-200 transition">
               <Twitter className="w-5 h-5" />
             </a>
-            <a href="#" className="text-muted-foreground hover:text-foreground transition">
+            <a href="#" className="text-slate-400 hover:text-slate-200 transition">
               <Github className="w-5 h-5" />
             </a>
-            <a href="#" className="text-muted-foreground hover:text-foreground transition">
+            <a href="#" className="text-slate-400 hover:text-slate-200 transition">
               <Linkedin className="w-5 h-5" />
             </a>
           </div>
