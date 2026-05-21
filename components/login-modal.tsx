@@ -4,9 +4,19 @@ import { useApp } from '@/lib/app-context';
 import { DEMO_USERS } from '@/lib/seed-data';
 import { motion } from 'framer-motion';
 import { LogIn, Activity, Stethoscope, Settings, Crown } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 export function LoginModal() {
   const { showLoginModal, switchUser } = useApp();
+  const router = useRouter();
+
+  const handleUserSelect = (userId: string) => {
+    switchUser(userId);
+    // Redirect to dashboard after user selection
+    setTimeout(() => {
+      router.push('/dashboard');
+    }, 300);
+  };
 
   if (!showLoginModal) return null;
 
@@ -116,7 +126,7 @@ export function LoginModal() {
                           <motion.button
                             key={user.id}
                             whileHover={{ scale: 1.02, translateY: -2 }}
-                            onClick={() => switchUser(user.id)}
+                            onClick={() => handleUserSelect(user.id)}
                             className={`${config.bgColor} border border-white/10 rounded-lg p-4 text-left transition-all hover:border-white/20 hover:glow-blue`}
                           >
                             <div className="flex items-center gap-3">
