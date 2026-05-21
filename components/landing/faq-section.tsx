@@ -35,19 +35,19 @@ export function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="py-20 px-6 max-w-4xl mx-auto">
-      <div className="text-center mb-16">
+    <section id="faq" className="py-16 sm:py-20 px-4 sm:px-6 max-w-4xl mx-auto">
+      <div className="text-center mb-12 sm:mb-16">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-bold mb-4"
+          className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4"
         >
           <span className="gradient-text">Frequently Asked Questions</span>
         </motion.h2>
       </div>
 
-      <div className="space-y-4">
+      <div className="space-y-3 sm:space-y-4">
         {faqs.map((faq, i) => (
           <motion.div
             key={i}
@@ -59,11 +59,11 @@ export function FAQSection() {
           >
             <button
               onClick={() => setOpenIndex(openIndex === i ? null : i)}
-              className="w-full px-6 py-4 flex justify-between items-center hover:bg-white/5 transition"
+              className="w-full px-4 sm:px-6 py-4 flex justify-between items-center hover:bg-white/5 transition"
             >
-              <span className="font-semibold text-left">{faq.question}</span>
+              <span className="font-semibold text-left text-white text-sm sm:text-base">{faq.question}</span>
               <motion.div animate={{ rotate: openIndex === i ? 180 : 0 }} transition={{ duration: 0.2 }}>
-                <ChevronDown className="w-5 h-5 text-muted-foreground" />
+                <ChevronDown className="w-5 h-5 text-slate-400 flex-shrink-0 ml-2" />
               </motion.div>
             </button>
 
@@ -72,7 +72,7 @@ export function FAQSection() {
               transition={{ duration: 0.3 }}
               className="overflow-hidden"
             >
-              <div className="px-6 py-4 text-muted-foreground border-t border-white/10">
+              <div className="px-4 sm:px-6 py-4 text-slate-300 text-sm sm:text-base border-t border-white/10">
                 {faq.answer}
               </div>
             </motion.div>

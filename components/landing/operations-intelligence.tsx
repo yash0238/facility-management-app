@@ -5,8 +5,8 @@ import { Activity, AlertCircle, TrendingUp } from 'lucide-react';
 
 export function OperationsIntelligence() {
   return (
-    <section className="py-20 px-6 max-w-7xl mx-auto">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <section className="py-16 sm:py-20 px-4 sm:px-6 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
         {/* Left: Screenshot/Demo */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -38,7 +38,7 @@ export function OperationsIntelligence() {
                   transition={{ delay: i * 0.1, duration: 2, repeat: Infinity }}
                   className="glass rounded-lg p-4"
                 >
-                  <div className="text-xs text-muted-foreground">{item.label}</div>
+                  <div className="text-xs text-slate-400">{item.label}</div>
                   <div className={`text-2xl font-bold mt-2 ${item.color}`}>{item.value}</div>
                 </motion.div>
               ))}
@@ -46,7 +46,7 @@ export function OperationsIntelligence() {
 
             {/* Alert Feed */}
             <div className="mt-6 space-y-2">
-              <div className="text-sm text-muted-foreground mb-3">Recent Alerts</div>
+              <div className="text-sm text-slate-300 mb-3">Recent Alerts</div>
               {[
                 { icon: AlertCircle, text: 'Patient 23: Critical fever - immediate doctor review', color: 'text-red-400' },
                 { icon: TrendingUp, text: 'Recovery milestone: Patient 15 fever-free for 3 days', color: 'text-green-400' },
@@ -61,7 +61,7 @@ export function OperationsIntelligence() {
                     className="flex items-center gap-3 text-sm p-2 rounded bg-slate-800/50"
                   >
                     <Icon className={`w-4 h-4 ${alert.color}`} />
-                    <span className="text-muted-foreground flex-1">{alert.text}</span>
+                    <span className="text-slate-300 flex-1">{alert.text}</span>
                   </motion.div>
                 );
               })}
@@ -77,8 +77,8 @@ export function OperationsIntelligence() {
           className="space-y-8"
         >
           <div>
-            <h2 className="text-4xl font-bold mb-4 gradient-text">Operations Command Center</h2>
-            <p className="text-muted-foreground text-lg">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 gradient-text">Operations Command Center</h2>
+            <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
               Your air traffic control for hospital operations. Real-time visibility into patient status, staff coordination, and facility metrics all in one dashboard.
             </p>
           </div>
@@ -98,8 +98,8 @@ export function OperationsIntelligence() {
             >
               <div className="flex-shrink-0 w-2 h-2 rounded-full bg-blue-500 mt-2" />
               <div>
-                <h4 className="font-semibold mb-1">{item.title}</h4>
-                <p className="text-muted-foreground">{item.desc}</p>
+                <h4 className="font-semibold mb-1 text-white text-sm sm:text-base">{item.title}</h4>
+                <p className="text-slate-300 text-sm sm:text-base">{item.desc}</p>
               </div>
             </motion.div>
           ))}

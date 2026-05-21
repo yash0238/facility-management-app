@@ -72,22 +72,23 @@ export function FeaturesGrid() {
   };
 
   return (
-    <section id="features" className="py-20 px-6 max-w-7xl mx-auto">
-      <div className="text-center mb-16">
+    <section id="features" className="py-16 sm:py-20 px-4 sm:px-6 max-w-7xl mx-auto">
+      <div className="text-center mb-12 sm:mb-16">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-bold mb-4"
+          className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4"
         >
-          <span className="gradient-text">Powerful Features</span> for Modern Healthcare
+          <span className="gradient-text">Powerful Features</span> for{' '}
+          <span className="text-white">Modern Healthcare</span>
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="text-lg text-muted-foreground max-w-2xl mx-auto"
+          className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed"
         >
           Everything you need to manage outbreak conditions and maintain operational excellence
         </motion.p>
@@ -98,7 +99,7 @@ export function FeaturesGrid() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="grid grid-cols-1 md:grid-cols-3 gap-6"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
       >
         {features.map((feature, index) => {
           const Icon = feature.icon;
@@ -112,10 +113,10 @@ export function FeaturesGrid() {
               <div className="mb-4 p-3 rounded-lg bg-blue-500/10 w-fit group-hover:bg-blue-500/20 transition">
                 <Icon className="w-6 h-6 text-blue-400 group-hover:text-blue-300 transition" />
               </div>
-              <h3 className="text-xl font-semibold mb-2 group-hover:text-blue-300 transition">
+              <h3 className="text-lg sm:text-xl font-semibold mb-2 text-white group-hover:text-blue-300 transition">
                 {feature.title}
               </h3>
-              <p className="text-muted-foreground group-hover:text-foreground transition">
+              <p className="text-sm sm:text-base text-slate-300 group-hover:text-slate-100 transition">
                 {feature.description}
               </p>
             </motion.div>

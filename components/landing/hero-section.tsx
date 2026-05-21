@@ -34,7 +34,7 @@ export function HeroSection() {
           transition={{ delay: 0.2 }}
           className="inline-block mb-6 glass px-4 py-2 rounded-full"
         >
-          <span className="text-sm text-blue-300">🚀 AI-Assisted Healthcare Operations</span>
+          <span className="text-sm font-semibold text-blue-300">🚀 AI-Assisted Healthcare Operations</span>
         </motion.div>
 
         {/* Main Headline */}
@@ -42,9 +42,10 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.8 }}
-          className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
         >
-          <span className="gradient-text">AI-Powered Operations</span> During Critical Outbreak Conditions
+          <span className="gradient-text">AI-Powered Operations</span> During{' '}
+          <span className="text-white">Critical Outbreak Conditions</span>
         </motion.h1>
 
         {/* Subheading */}
@@ -52,7 +53,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.8 }}
-          className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto"
+          className="text-base sm:text-lg md:text-xl text-slate-300 mb-10 max-w-2xl mx-auto leading-relaxed"
         >
           Coordinate nurses, doctors, patients, and hospital operations in real time. Smart prioritization, escalation alerts, and automated workflows for maximum efficiency.
         </motion.p>
@@ -62,14 +63,14 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.8 }}
-          className="flex gap-4 justify-center flex-wrap mb-12"
+          className="flex gap-3 sm:gap-4 justify-center flex-wrap mb-12 px-4"
         >
-          <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
-            <Link href="/dashboard" className="flex items-center gap-2">
+          <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 text-white text-sm sm:text-base">
+            <Link href="/auth/login" className="flex items-center gap-2">
               Launch Platform <ArrowRight className="w-4 h-4" />
             </Link>
           </Button>
-          <Button asChild variant="outline" size="lg">
+          <Button asChild variant="outline" size="lg" className="text-sm sm:text-base">
             <Link href="#features" className="flex items-center gap-2">
               View Features
             </Link>
