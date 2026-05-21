@@ -52,8 +52,8 @@ export function NurseDashboard() {
         <Card className="p-6">
           <div className="flex items-start justify-between">
             <div>
-              <p className="text-sm text-slate-600">Active Patients</p>
-              <p className="text-3xl font-bold text-slate-900 mt-2">
+              <p className="text-sm text-slate-300">Active Patients</p>
+              <p className="text-3xl font-bold text-slate-100 mt-2">
                 {filteredPatients.length}
               </p>
             </div>
@@ -64,8 +64,8 @@ export function NurseDashboard() {
         <Card className="p-6">
           <div className="flex items-start justify-between">
             <div>
-              <p className="text-sm text-slate-600">Need Temperature</p>
-              <p className="text-3xl font-bold text-slate-900 mt-2">
+              <p className="text-sm text-slate-300">Need Temperature</p>
+              <p className="text-3xl font-bold text-slate-100 mt-2">
                 {filteredPatients.filter((p) => !new Date(p.temperatureRecords[p.temperatureRecords.length - 1]?.recordedAt || 0).toDateString() === new Date().toDateString()).length}
               </p>
             </div>
@@ -76,8 +76,8 @@ export function NurseDashboard() {
         <Card className="p-6">
           <div className="flex items-start justify-between">
             <div>
-              <p className="text-sm text-slate-600">Critical Temps</p>
-              <p className="text-3xl font-bold text-red-600 mt-2">
+              <p className="text-sm text-slate-300">Critical Temps</p>
+              <p className="text-3xl font-bold text-red-400 mt-2">
                 {getCriticalCount()}
               </p>
             </div>
@@ -184,7 +184,7 @@ export function NurseDashboard() {
         {filteredPatients.length === 0 && (
           <Card className="p-8 text-center">
             <Thermometer className="w-12 h-12 text-slate-300 mx-auto mb-3" />
-            <p className="text-slate-600">No patients found</p>
+            <p className="text-slate-300">No patients found</p>
           </Card>
         )}
       </div>
@@ -217,7 +217,7 @@ function PatientCard({ patient, onTemperatureClick }: PatientCardProps) {
           <div className="flex items-center gap-3">
             <div>
               <h3 className="font-semibold text-slate-900">{patient.name}</h3>
-              <p className="text-sm text-slate-600">
+              <p className="text-sm text-slate-300">
                 Ward {patient.ward} • Bed {patient.bedNumber}
               </p>
             </div>
@@ -228,17 +228,17 @@ function PatientCard({ patient, onTemperatureClick }: PatientCardProps) {
 
           <div className="grid grid-cols-3 gap-4 mt-3">
             <div>
-              <p className="text-xs text-slate-600">Age</p>
-              <p className="font-semibold text-slate-900">{patient.age} years</p>
+              <p className="text-xs text-slate-300">Age</p>
+              <p className="font-semibold text-slate-100">{patient.age} years</p>
             </div>
             <div>
-              <p className="text-xs text-slate-600">Latest Temp</p>
-              <p className={`font-semibold ${isCritical ? 'text-red-600' : 'text-slate-900'}`}>
+              <p className="text-xs text-slate-300">Latest Temp</p>
+              <p className={`font-semibold ${isCritical ? 'text-red-400' : 'text-slate-100'}`}>
                 {latestTemp ? `${latestTemp.temperature}°C` : 'No record'}
               </p>
             </div>
             <div>
-              <p className="text-xs text-slate-600">Trend</p>
+              <p className="text-xs text-slate-300">Trend</p>
               <Badge variant="outline" className="mt-1">
                 {trend === 'improving' && '📈 Improving'}
                 {trend === 'stable' && '➡️ Stable'}

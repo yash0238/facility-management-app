@@ -58,9 +58,9 @@ export function AdminDashboard() {
         <Card className="p-6">
           <div className="flex items-start justify-between">
             <div>
-              <p className="text-sm text-slate-600">Total Patients</p>
-              <p className="text-3xl font-bold text-slate-900 mt-2">{totalPatients}</p>
-              <p className="text-xs text-slate-500 mt-1">{activePatients} active</p>
+              <p className="text-sm text-slate-300">Total Patients</p>
+              <p className="text-3xl font-bold text-slate-100 mt-2">{totalPatients}</p>
+              <p className="text-xs text-slate-400 mt-1">{activePatients} active</p>
             </div>
             <Users className="w-8 h-8 text-blue-500 opacity-20" />
           </div>
@@ -69,9 +69,9 @@ export function AdminDashboard() {
         <Card className="p-6">
           <div className="flex items-start justify-between">
             <div>
-              <p className="text-sm text-slate-600">Bed Occupancy</p>
-              <p className="text-3xl font-bold text-slate-900 mt-2">{occupancyRate}%</p>
-              <p className="text-xs text-slate-500 mt-1">{occupiedBeds}/{totalBeds} beds</p>
+              <p className="text-sm text-slate-300">Bed Occupancy</p>
+              <p className="text-3xl font-bold text-slate-100 mt-2">{occupancyRate}%</p>
+              <p className="text-xs text-slate-400 mt-1">{occupiedBeds}/{totalBeds} beds</p>
             </div>
             <Bed className="w-8 h-8 text-orange-500 opacity-20" />
           </div>
@@ -80,15 +80,15 @@ export function AdminDashboard() {
         <Card className="p-6">
           <div className="flex items-start justify-between">
             <div>
-              <p className="text-sm text-slate-600">Discharged Today</p>
-              <p className="text-3xl font-bold text-slate-900 mt-2">
+              <p className="text-sm text-slate-300">Discharged Today</p>
+              <p className="text-3xl font-bold text-slate-100 mt-2">
                 {patients.filter(
                   (p) =>
                     p.dischargeDate &&
                     new Date(p.dischargeDate).toDateString() === new Date().toDateString()
                 ).length}
               </p>
-              <p className="text-xs text-slate-500 mt-1">Total: {dischargedPatients}</p>
+              <p className="text-xs text-slate-400 mt-1">Total: {dischargedPatients}</p>
             </div>
             <CheckCircle className="w-8 h-8 text-green-500 opacity-20" />
           </div>
@@ -97,9 +97,9 @@ export function AdminDashboard() {
         <Card className="p-6">
           <div className="flex items-start justify-between">
             <div>
-              <p className="text-sm text-slate-600">Available Beds</p>
-              <p className="text-3xl font-bold text-slate-900 mt-2">{availableBeds}</p>
-              <p className="text-xs text-slate-500 mt-1">Capacity: {totalBeds}</p>
+              <p className="text-sm text-slate-300">Available Beds</p>
+              <p className="text-3xl font-bold text-slate-100 mt-2">{availableBeds}</p>
+              <p className="text-xs text-slate-400 mt-1">Capacity: {totalBeds}</p>
             </div>
             <TrendingUp className="w-8 h-8 text-slate-500 opacity-20" />
           </div>
@@ -208,12 +208,12 @@ export function AdminDashboard() {
         )}
       </div>
 
-      {filteredPatients.length === 0 && (
-        <Card className="p-8 text-center">
-          <Users className="w-12 h-12 text-slate-300 mx-auto mb-3" />
-          <p className="text-slate-600">No patients found</p>
-        </Card>
-      )}
+        {filteredPatients.length === 0 && (
+          <Card className="p-8 text-center">
+            <Users className="w-12 h-12 text-slate-300 mx-auto mb-3" />
+            <p className="text-slate-300">No patients found</p>
+          </Card>
+        )}
 
       {/* Modal */}
       {selectedPatient && (
@@ -253,7 +253,7 @@ function PatientRow({ patient, onViewClick }: PatientRowProps) {
           <div className="flex items-center gap-3">
             <div>
               <h4 className="font-semibold text-slate-900">{patient.name}</h4>
-              <p className="text-sm text-slate-600">
+              <p className="text-sm text-slate-300">
                 Bed {patient.bedNumber} • Age {patient.age}
               </p>
             </div>
@@ -264,8 +264,8 @@ function PatientRow({ patient, onViewClick }: PatientRowProps) {
         </div>
 
         <div className="text-right mr-3">
-          <p className="text-xs text-slate-600">Admitted</p>
-          <p className="text-sm font-medium text-slate-900">
+          <p className="text-xs text-slate-300">Admitted</p>
+          <p className="text-sm font-medium text-slate-100">
             {Math.floor(
               (Date.now() - new Date(patient.admissionDate).getTime()) / (1000 * 60 * 60 * 24)
             )}{' '}
